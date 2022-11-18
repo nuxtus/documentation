@@ -34,8 +34,8 @@ In order for Nuxtus CLI to communicate with Directus you need to provide connect
 # URL of your Directus instance
 DIRECTUS_URL=http://localhost:8055
 # Directus login credentials
-NUXT_PUBLIC_DIRECTUS_EMAIL=admin@example.com
-NUXT_PUBLIC_DIRECTUS_PASSWORD=password
+NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=admin@example.com
+NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=password
 ```
 
 You must have a working and configured `nuxt-directus` module first. The configuration below should achieve this but for more details on configuring `nuxt-directus` see [the projects documentation](https://www.npmjs.com/package/nuxt-directus).
