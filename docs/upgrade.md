@@ -79,7 +79,41 @@ buildModules: [
 3. Update Nuxt to 3rc13 in `client/package.json`
 4. Update "nuxt-directus" to "^3.2.1" in `client/package.json`
 
-## 1.8.0 > 1.8.2
+## 1.8.0 > 2.0.0
+
+Nuxt 3.0.0 has been released and Nuxtus has been updated to use it. This is a major update and will require some changes to your project.
 
 1. Update Nuxt to 3.0.0 in `client/package.json`
 2. Update "nuxt-directus" to "^3.2.2" in `client/package.json`
+3. Update @nuxtus/nuxt-module to "2.0.0" in `client/package.json` 
+4. Update your `client/nuxt.config.ts` like this:
+// TOOD: Fix this to use the + - feature of vitepress
+
+```ts
+publicRuntimeConfig: { [!code  --]
+	directusEmail: '', [!code  --]
+	directusPassword: '', [!code  --]
+} [!code  --]
+runtimeConfig: { [!code  ++]
+	public { [!code  ++]
+		nuxtus: { [!code  ++]
+			directus: { [!code  ++]
+				email: '', [!code  ++]
+				password: '' [!code  ++]
+			} [!code  ++]
+		} [!code  ++]
+	} [!code  ++]
+} [!code  ++]
+```
+5. Change the .env variables as follows: (use your Directus credentials)
+```
+NUXT_PUBLIC_DIRECTUS_EMAIL="{{ email }}" [!code  --]
+NUXT_PUBLIC_DIRECTUS_PASSWORD="{{ password }}" [!code  --]
+NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=your@email.com [!code  ++]
+NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=<password> [!code  ++]
+```
+
+## 2.0.0 > 2.0.1
+
+1. Update @nuxtus/cli to "2.0.0" in `client/package.json`
+2. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 
