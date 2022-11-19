@@ -81,6 +81,8 @@ buildModules: [
 
 ## 1.8.0 > 2.0.0
 
+Nuxt 3.0.0 has been released and Nuxtus has been updated to use it. This is a major update and will require some changes to your project.
+
 1. Update Nuxt to 3.0.0 in `client/package.json`
 2. Update "nuxt-directus" to "^3.2.2" in `client/package.json`
 3. Update @nuxtus/nuxt-module to "2.0.0" in `client/package.json` 
@@ -110,3 +112,8 @@ NUXT_PUBLIC_DIRECTUS_PASSWORD="{{ password }}" [!code  --]
 NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=your@email.com [!code  ++]
 NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=<password> [!code  ++]
 ```
+
+## 2.0.0 > 2.0.1
+
+1. Update @nuxtus/cli to "2.0.0" in `client/package.json`
+2. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 
