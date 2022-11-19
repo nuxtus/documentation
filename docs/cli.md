@@ -4,7 +4,7 @@ The Nuxtus CLI is a command line interface for Nuxt that allows you to manually 
 
 ## Installation
 
-If you installed the [Nuxtus Boilerplate](README.md#installation) then Nuxtus CLI is already installed, you can skip to the next section.
+If you installed the [Nuxtus Boilerplate](/#installation) then Nuxtus CLI is already installed, you can skip to the next section.
 
 To manually install the Nuxtus CLI run the following *in the root of your Nuxt project*:
 

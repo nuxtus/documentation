@@ -40,4 +40,4 @@ Refer to [tls.createSecureContext](https://nodejs.org/api/tls.html#tls_tls_creat
 ## Development
 
 - Run `npm run dev:prepare` to generate type stubs.
-- Use `npm run dev` to start [playground](./playground) in development mode.
+- Use `npm run dev` to start playground in development mode.

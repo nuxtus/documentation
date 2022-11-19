@@ -1,6 +1,6 @@
 # Nuxtus Documentation
 
-This is the documentation for the entire Nuxtus ecosystem. It is built using [VitePress](https://vitepress.vuejs.org).
+This is the documentation for the entire [Nuxtus ecosystem](https://www.nuxtus.com). It is built using [VitePress](https://vitepress.vuejs.org).
 
 ## Development
 
