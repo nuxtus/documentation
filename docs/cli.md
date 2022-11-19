@@ -49,13 +49,13 @@ nuxtus create -h # For help with the create command
 
 ## Changing to static token authentication
 
-To change to [static token authentication](https://docs.directus.io/reference/authentication.html) you can run the following command:
+To change to [static token authentication](https://docs.directus.io/reference/authentication.html) you can run the following command from the /client folder:
 
 ```bash
 nuxtus token
 ```
 
-This will generate a unique token, save it to the current user in Directus and update you `.env` file to use this token instead of a user name and password.
+This will generate a unique token, save it to the current user in Directus and update your `.env` file to use this token instead of a user name and password.
 
 ## Creating pages
 
