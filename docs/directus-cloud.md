@@ -1,6 +1,6 @@
 # Directus Cloud
 
-Nuxtus can be used with a local copy of `Directus` or the cloud hosted version of [Directus Cloud](https://directus.cloud/). To get started you need to have an existing `Directus Cloud` account [correctly configured](#configuring-directus) and then select the "Directus Cloud" option when [creating a new Nuxtus project](README.md#new-project).
+Nuxtus can be used with a local copy of `Directus` or the cloud hosted version of [Directus Cloud](https://directus.cloud/). To get started you need to have an existing `Directus Cloud` account [correctly configured](#configuring-directus) and then select the "Directus Cloud" option when [creating a new Nuxtus project](/#new-project).
 
 ## Configuring Directus
 
