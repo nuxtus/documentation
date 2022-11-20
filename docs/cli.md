@@ -35,6 +35,8 @@ The CLI command comes with in built help commands that can be used to get more i
 nuxtus
 ```
 
+> If you get a permission denied or command not found message make sure you are in the `/client` folder and/or use the full path `./node_modules/.bin/nuxtus`
+
 You should see something similar to:
 
 ![Nuxtus-CLI Screenshot](images/nuxtus-cli.png)
