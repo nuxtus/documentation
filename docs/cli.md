@@ -23,8 +23,8 @@ Create a `.env` file in the root of your **Nuxt project** and add the following 
 DIRECTUS_URL=http://localhost:8055
 
 # Directus login credentials
-NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=admin@example.com
-NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=password
+NUXTUS_DIRECTUS_ADMIN_EMAIL=admin@example.com
+NUXTUS_DIRECTUS_ADMIN_PASSWORD=password
 ```
 
 ## Usage

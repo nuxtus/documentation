@@ -109,11 +109,15 @@ runtimeConfig: { [!code  ++]
 ```
 NUXT_PUBLIC_DIRECTUS_EMAIL="{{ email }}" [!code  --]
 NUXT_PUBLIC_DIRECTUS_PASSWORD="{{ password }}" [!code  --]
-NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=your@email.com [!code  ++]
-NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=<password> [!code  ++]
+NUXTUS_DIRECTUS_ADMIN_EMAIL=your@email.com [!code  ++]
+NUXTUS_DIRECTUS_ADMIN_PASSWORD=<password> [!code  ++]
 ```
 
 ## 2.0.0 > 2.0.1
 
 1. Update @nuxtus/cli to "2.0.0" in `client/package.json`
 2. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 
+
+## 2.0.1 > ???
+
+1. If still running Directus 9, [update to Directus 10](https://learndirectus.com/how-to-upgrade-to-v10/)
