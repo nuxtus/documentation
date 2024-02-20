@@ -13,8 +13,8 @@ The end result can be a static website or dynamically pull data from Directus de
   - [Tailwind CSS](https://tailwindcss.nuxtjs.org/)
   - [Google Fonts](https://github.com/nuxt-community/google-fonts-module)
   - [Nuxtus CLI](https://github.com/nuxtus/cli)
-  - [Nuxt-Directus](https://nuxt-directus.netlify.app/)
-  - Automatically generated Typescript types
+  - [Directus SDK](https://docs.directus.io/guides/sdk/getting-started.html)
+  - Automatically generated Typescript types for Directus Collections
 
 ## Acknowledgements
 
@@ -22,5 +22,5 @@ Nuxtus wouldn't be possible without the following amazing technologies:
 
 * [Directus](https://directus.io)
 * [Nuxt](https://nuxt.js.org)
-* [Typescript](https://tailwindcss.com)
+* [Tailwind CSS](https://tailwindcss.com)
 * [OpenApi Typescript](https://www.npmjs.com/package/openapi-typescript)
