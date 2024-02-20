@@ -18,5 +18,5 @@ nuxtus token
 This will generate a static token in Directus and replace your email/password credentials in the .env file with the token:
 
 ```
-NUXTUS_DIRECTUS_TOKEN=<RANDOM_TOKEN>
+NUXTUS_DIRECTUS_STATIC_TOKEN=<RANDOM_TOKEN>
 ```
