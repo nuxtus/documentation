@@ -87,7 +87,6 @@ Nuxt 3.0.0 has been released and Nuxtus has been updated to use it. This is a ma
 2. Update "nuxt-directus" to "^3.2.2" in `client/package.json`
 3. Update @nuxtus/nuxt-module to "2.0.0" in `client/package.json` 
 4. Update your `client/nuxt.config.ts` like this:
-// TOOD: Fix this to use the + - feature of vitepress
 
 ```ts
 publicRuntimeConfig: { [!code  --]
@@ -109,11 +108,53 @@ runtimeConfig: { [!code  ++]
 ```
 NUXT_PUBLIC_DIRECTUS_EMAIL="{{ email }}" [!code  --]
 NUXT_PUBLIC_DIRECTUS_PASSWORD="{{ password }}" [!code  --]
-NUXT_PUBLIC_NUXTUS_DIRECTUS_EMAIL=your@email.com [!code  ++]
-NUXT_PUBLIC_NUXTUS_DIRECTUS_PASSWORD=<password> [!code  ++]
+NUXTUS_DIRECTUS_ADMIN_EMAIL=your@email.com [!code  ++]
+NUXTUS_DIRECTUS_ADMIN_PASSWORD=<password> [!code  ++]
 ```
 
 ## 2.0.0 > 2.0.1
 
 1. Update @nuxtus/cli to "2.0.0" in `client/package.json`
 2. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 
+
+## 2.0.1 > ???
+
+// TODO: Review the versions and instructions here
+1. If still running Directus 9, [update to Directus 10](https://learndirectus.com/how-to-upgrade-to-v10/)
+2. Update .env with the and modified variable names:
+
+```bash
+# nuxt-directus required values
+DIRECTUS_URL="http://localhost:8055"
+# Nuxtus values
+NUXTUS_DIRECTUS_ADMIN_EMAIL="admin@example.com"
+NUXTUS_DIRECTUS_ADMIN_PASSWORD="password"
+NUXTUS_DIRECTUS_AUTH=true
+NUXTUS_DIRECTUS_STATIC_TOKEN="token" # Not required if token false and using public API
+```
+
+3. Update nuxt config
+
+```ts
+runtimeConfig: {
+	nuxtus: { [!code  ++]
+		directus: { [!code  ++]
+			email: process.env.NUXTUS_DIRECTUS_ADMIN_EMAIL, [!code  ++]
+			password: process.env.NUXTUS_DIRECTUS_ADMIN_PASSWORD, [!code  ++]
+			token: process.env.NUXTUS_DIRECTUS_STATIC_TOKEN || null, [!code  ++]
+		}, [!code  ++]
+	}, [!code  ++]
+	public {
+		nuxtus: {
+			directus: {
+				url: process.env.DIRECTUS_URL || "http://localhost:3000", [!code ++]
+				email: '', [!code  --]
+				password: '' [!code  --]
+			}
+		}
+	}
+}
+```
+
+4. Update @nuxtus/cli to "2.0.0" in `client/package.json`
+5. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 

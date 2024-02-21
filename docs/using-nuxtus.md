@@ -12,6 +12,37 @@ This will start both Directus and Nuxt and output will appear in the same consol
 
 If you added Nuxtus to an existing project, you will need to continue using your current process for starting Directus and Nuxt.
 
+## Permissions
+
+Before you start generating pages it is important to understand and make a decision on the permissions to access your Directus data. Nuxtus will automatically retrieve Directus data via:
+
+1. No authentication: This requires that you change the "read" permissions for each collection you want a Nuxt page for to be added to the ["public" role in Directus](https://docs.directus.io/user-guide/user-management/permissions.html). This requires no configuration in Nuxtus, but will require you to manually add each new collection to the "Public" role as they are created.
+2. Static token authentication: If you don't want your data to be publicly accessible via an API you can provide Nuxtus with a [static token](https://docs.directus.io/user-guide/user-management/user-directory.html#edit-user-details) associated with a user that then has a role with the permissions to "read" collections you want to make available in Nuxt. This token is used by the Nuxt server either during render or build time depending on your project settings.
+   
+> Note: A Directus admin account is also required, this is used for type generation during development only and is not required in production.
+
+
+### Setting up permissions
+
+Once you have chosen a technique above, finalise your configuration as follows:
+
+### Public API
+
+No further set up is required. Just remember to assign each collection "read" permissions in the Public role as you create them otherwise Nuxtus will not be able to access the collection's contents.
+
+#### Static tokens
+
+If using a user token create/select a Directus user and create a static token in [their use profile](http://localhost:8055/admin/users/). Scroll down till you see "token" and click add. Do not forget to save the user with the new token.
+
+Copy the created token into `/client/.env` file and change the auth setting to true:
+
+```bash
+NUXTUS_DIRECTUS_AUTH=true
+NUXTUS_DIRECTUS_STATIC_TOKEN="TOKEN HERE"
+```
+
+Then assign "read" permissions in this user's role as you create collections otherwise Nuxtus will not be able to access the collection's contents.
+
 ## Creating Nuxt pages
 
 By default Nuxtus will automatically create Nuxt pages for you when you create a Directus `collection` thanks to the [Nuxtus Directus plugin](https://github.com/nuxtus/hook) and the [Nuxtus Nuxt Module](https://github.com/nuxtus/nuxt-module).
@@ -37,16 +68,18 @@ In this example we have created a `posts` collection in Directus:
 
 ```typescript{6-11}
 <script setup lang="ts">
-  import { components } from "../../interfaces/nuxtus";
-  type posts = components["schemas"]["Itemsposts"];
-  const { getItems } = useDirectusItems();
-  const filters = {/* Put your filters here */};
-  const items: posts[] = await getItems<any>({
-    collection: "posts",
-    params: {
-      filter: filters,
-    }
-  });
+  import type { Query } from "@directus/sdk"
+  import type { components } from "../../interfaces/nuxtus"
+  type TestNuxtus = components["schemas"]["ItemsTestNuxtus"]
+  const { $directus, $readItems, $checkError } = useNuxtApp()
+
+  const query: Query<components, TestNuxtus> = {
+    // Add your filters and query customisations here
+  }
+
+  const { data, error } = useAsyncData<TestNuxtus[] | null>('test_nuxtus', () => {
+    return $directus.request($readItems('test_nuxtus', query))
+  })
 </script>
 ```
 
