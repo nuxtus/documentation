@@ -13,7 +13,7 @@ npm start
 ## Set permissions
 
 ### User token
-If using a user token create/select a Directus user and create a static token in [their use profile](http://localhost:8055/admin/users/). Scroll down till you see "token" and click add. Do not forget to save the user with the new token.
+If using a user token create/select a Directus user and create a static token in <a href="http://localhost:8055/admin/users/" target="_blank" rel="noreferrer">their use profile</a>. Scroll down till you see "token" and click add. Do not forget to save the user with the new token.
 
 Copy the created token into `/client/.env` file and change the auth setting to true:
 
