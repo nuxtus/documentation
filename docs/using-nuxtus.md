@@ -32,7 +32,7 @@ No further set up is required. Just remember to assign each collection "read" pe
 
 #### Static tokens
 
-If using a user token create/select a Directus user and create a static token in <a href="http://localhost:8055/admin/users/" target="_blank" rel="noreferrer">their use profile</a>. Scroll down till you see "token" and click add. Do not forget to save the user with the new token.
+If using a user token create/select a Directus user and create a static token in <a href="http://localhost:8055/admin/users/" target="_blank" rel="noreferrer">their user profile</a>. Scroll down till you see "token" and click add. Do not forget to save the user with the new token.
 
 Copy the created token into `/client/.env` file and change the auth setting to true:
 
@@ -60,7 +60,7 @@ Nuxtus will create a folder in your Nuxt `/pages/` folder with the name of your 
 
 Normal collections will generated with 2 files (a listing or index page and a display or details page), while singletons will contain one (a page displaying the singleton).
 
-Regardless of the collection type, pages created by Nuxtus fetch Directus data in the Nuxt `setup` lifecycle hook using [nuxt-directus](https://nuxt-directus.netlify.app/) for Directus API interaction.
+Regardless of the collection type, pages created by Nuxtus fetch Directus data in the Nuxt `setup` lifecycle hook using the Directus Javscript SDK.
 
 > If you have the Directus API permissions set to public you can set `authDirectus` to false in `nuxt.config.ts`
 
@@ -85,7 +85,7 @@ In this example we have created a `posts` collection in Directus:
 
 > Because OpenAPI schemas may have invalid TypeScript characters as names, the square brackets are a safe way to access every property.
 
-Once created you can edit the generated `.vue` files to customise the data retrieved using [nuxt-directus](https://nuxt-directus.netlify.app/) such as [filters](https://nuxt-directus.netlify.app/usage/useDirectusItems). 
+Once created you can edit the generated `.vue` files to customise the data retrieved using the Directus SDK. 
 
 [Tailwind CSS](https://tailwindcss.com) is pre-installed so you can start styling pages straight out of the box.
 
