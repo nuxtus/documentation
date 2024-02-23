@@ -158,3 +158,4 @@ runtimeConfig: {
 
 4. Update @nuxtus/cli to "2.0.0" in `client/package.json`
 5. Update @nuxtus/nuxt-module to "2.2.0" in `client/package.json` 
+6. Remove `nuxt-directus` dependency in `client/package.json`

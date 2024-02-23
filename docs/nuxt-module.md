@@ -9,7 +9,6 @@ The Nuxtus Nuxt Module automates Directus/Nuxt interoperability. It works hand-i
 Install the Nuxtus Nuxt module package:
 
 ```bash	
-npm install nuxt-directus
 npm install --save-dev @nuxtus/nuxt-module
 ```
 
@@ -18,7 +17,6 @@ In your nuxt.config.ts file add the modules:
 ```typescript
 {
   modules: [
-    'nuxt-directus',
     '@nuxtus/nuxt-module',
   ],
 }
@@ -36,16 +34,14 @@ DIRECTUS_URL=http://localhost:8055
 # Directus login credentials
 NUXTUS_DIRECTUS_ADMIN_EMAIL=admin@example.com
 NUXTUS_DIRECTUS_ADMIN_PASSWORD=password
+NUXTUS_DIRECTUS_AUTH=false
 ```
-
-You must have a working and configured `nuxt-directus` module first. The configuration below should achieve this but for more details on configuring `nuxt-directus` see [the projects documentation](https://www.npmjs.com/package/nuxt-directus).
 
 The nuxt module can be configured using the `nuxtus` property within `nuxt.config.ts`:
 
 ```typescript
 {
   modules: [
-    'nuxt-directus',
     '@nuxtus/nuxt-module',
   ],
   nuxtus: {
