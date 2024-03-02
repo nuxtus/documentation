@@ -33,3 +33,32 @@ For more details on using Nuxtus see [the using Nuxtus section](using-nuxtus.md)
 
 1. [Install Directus Extension](directus-extension.md)
 2. [Install Nuxt Module](nuxt-module.md)
+3. Add the following environment variables to your `.env` file in your Nuxt project:
+	```bash
+	DIRECTUS_URL="http://localhost:8055"
+	NUXTUS_DIRECTUS_ADMIN_EMAIL="admin@example.com"
+	NUXTUS_DIRECTUS_ADMIN_PASSWORD="PASSWORD"
+	NUXTUS_DIRECTUS_AUTH=true
+	NUXTUS_DIRECTUS_STATIC_TOKEN="STATIC TOKEN FROM DIRECTUS"
+	```
+4. Update your `nuxt.config.ts` with the following:
+   ```ts
+   runtimeConfig: {
+		nuxtus: {
+			directus: {
+				email: process.env.NUXTUS_DIRECTUS_ADMIN_EMAIL,
+				password: process.env.NUXTUS_DIRECTUS_ADMIN_PASSWORD,
+				token: process.env.NUXTUS_DIRECTUS_STATIC_TOKEN || null,
+			},
+		},
+		public: {
+			nuxtus: {
+				authDirectus: process.env.NUXTUS_DIRECTUS_AUTH === "true",
+				// If you are not using Nuxt SSR then these credentials will be public, give user read one access
+				directus: {
+					url: process.env.DIRECTUS_URL || "http://localhost:3000",
+				},
+			},
+		},
+	},
+   ```
