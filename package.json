@@ -28,7 +28,7 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "flexsearch": "^0.7.31",
+    "flexsearch": "^0.8.0",
     "markdown-it": "^14.0.0",
     "vitepress-plugin-search": "^1.0.4-alpha.15"
   }
